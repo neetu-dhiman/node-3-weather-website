@@ -8,7 +8,9 @@ const forecast = ([longitude, latitude], callback) => {
     // const url = 'https://randomuser.me/api/';
     request({url, json: true }, (error, response, body) => {
         if(error) {
-            callback(error, response);
+            callback('Unable to connect to weather service', undefined);
+        } else if (body.error) {
+            callback('Unable to find location' , undefined);
         } else if (response) {
             // console.log(response);
             callback('', body);

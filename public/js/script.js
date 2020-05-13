@@ -18,10 +18,9 @@ weatherForm.addEventListener('submit', (e) => {
         response.json().then(data => {
             if (data.error) {
             } else {
-                // console.log(data);
                 search.value = '';
-                msgOne.textContent = data.city + 'has the temperature ';
-                msgTwo.textContent = data.temperature + 'weather is ' + data.weather_descriptions;
+                msgOne.textContent = data.city ;
+                msgTwo.textContent = 'The temperature is' + data.temperature + ' and the weather is ' + data.weather_descriptions;
             }
         })
     });

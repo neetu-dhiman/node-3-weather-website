@@ -72,7 +72,7 @@ app.get('/weather', (req, res) => {
                     return;
                 } else {
                     let result = {
-                        city: response.location.name,
+                        city: response.location.name + ", " + response.location.country,
                         temperature: response.current.temperature,
                         weather_descriptions: response.current.weather_descriptions[0]
 
